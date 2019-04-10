@@ -40,7 +40,7 @@ rob.move(64);
 			// 10. Check that your shape is the same as Figure 1. This is one arm of the ninja star.
 			
 			// 11. Color your ninja star like Figure 2.
-		rob.setPenColor(1000, 0, 0);
+		rob.setPenColor(204, 0, 0);
 
 }
 }

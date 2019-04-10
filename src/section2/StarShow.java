@@ -41,7 +41,7 @@ for(int i=0; i<30; i++) {
 			// 17. Turn the robot 12 degrees
 	robot.turn(12);
 			// 18. Make each star a different random color like in Figure 4
-
+robot.setRandomPenColor();
 }
 	}
 
