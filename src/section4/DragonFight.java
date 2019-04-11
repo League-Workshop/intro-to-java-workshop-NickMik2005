@@ -30,7 +30,7 @@ public class DragonFight {
 		// 9. If they typed in "yell":
 		if(attack.equalsIgnoreCase("Yell"));{
 			//-- Find a random number between 0 and 10 and store it in dragonDamage
-			
+			int damage = generator.nextInt(11);
 			//-- Subtract that number from the dragon's health variable 
 			
 		}
