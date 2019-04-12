@@ -1,0 +1,2207 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head itemtype="http://schema.org/WebSite"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<title>Pixilart - Free online pixel art drawing tool</title>
+<meta name="description" content=" - Pixilart, free online pixel drawing tool - This drawing tool allows you to make pixel art, game sprites and animated GIFs online for free.">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<meta name="keywords" content="pixilart, pixelart, pixel art, pixel, art, drawing, pixel drawing, online drawing, pixel drawing online, make pixel art, make pixil art, pixil, social pixel">
+<script type='text/javascript' src="https://static.pixilart.com/js/jquery-2.1.4.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://static.pixilart.com/images/favicon/apple-touch-icon.png?v=jw6qNMPWjl">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static.pixilart.com/images/favicon/favicon-32x32.png?v=jw6qNMPWz4">
+<link rel="icon" type="image/png" sizes="16x16" href="https://static.pixilart.com/images/favicon/favicon-16x16.png?v=jw6qNMPWjl">
+<link rel="manifest" href="https://static.pixilart.com/images/favicon/manifest.json?v=gw6qNMPWjl">
+<link rel="mask-icon" href="https://static.pixilart.com/images/favicon/safari-pinned-tab.svg?v=jw6qNMPWjl" color="#e74d3c">
+<meta name="apple-mobile-web-app-title" content="Pixilart">
+<meta name="application-name" content="Pixilart">
+<meta name="theme-color" content="#FFFFFF">
+<link href="https://static.pixilart.com/css/normalize.css" rel="stylesheet" type="text/css">
+<link href="https://static.pixilart.com/css/main.css?ver=1.1.2.3.5" rel="stylesheet" type="text/css">
+<link href="https://static.pixilart.com/css/tipstepper.css?ver=1.1" rel="stylesheet" type="text/css">
+
+<link href="https://static.pixilart.com/css/application.css?v=3.2.3" rel="stylesheet" type="text/css">
+<link rel="stylesheet" media="screen" type="text/css" href="/css/colorpicker.css" />
+<script type='text/javascript' src="https://static.pixilart.com/js/jquery-ui.min.js"></script>
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src="https://static.pixilart.com/js/colorpicker.js"></script>
+<script type="text/javascript" src="https://static.pixilart.com/js/FileSaver.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+<script type="text/javascript" src="https://static.pixilart.com/js/tipstepper.js?ver=1.3"></script>
+<script type='text/javascript' src="https://static.pixilart.com/js/pixshop.js?ver=1.3"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+<meta property="og:title" content="Draw Pixel Art Online - Pixilart" />
+<meta property="og:type" content="software" />
+<meta property="og:url" content="https://www.pixilart.com/draw" />
+<meta property="fb:page_id" content="244937025609196" />
+<meta property="fb:app_id" content="421508937871104" />
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@pixil_art">
+
+<meta property="og:image" content="https://static.pixilart.com/images/public/drawing-social-share.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script>
+		// Used for preventing login popup and for new users
+	    var preventLoginAjax = false; preventLike = false;
+	    	    function notLoggedIn()
+	    {
+	        $('.popup-container.login-popup').fadeIn(100);
+	        $('.login-popup-container').animate({top: 0,opacity: 1}, 250);
+
+	        $('.like-photo').attr('data-toggled', 'true');
+
+	        preventLike = true;
+	    }
+	    	</script>
+<script>
+	  // Google
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-40962823-3', 'auto');
+		ga('send', 'pageview');
+	</script>
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Website",
+      "name": "Pixilart",
+      "url": "https://www.pixilart.com",
+      "sameAs": [
+        "http://www.facebook.com/pixilart",
+        "http://instagram.com/pixilart",
+        "http://www.twitter.com/pixil_art",
+        "http://plus.google.com/+PixilartNet"
+      ],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.pixilart.com/search?term={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+<body>
+<div class="drawing-wrapper" id="drawing-wrapper" touch-action="pan-y">
+
+<div id="toolbar" oncontextmenu="return false;">
+<div class="button-group-toolbar left-section hide-mobile">
+<ul class="header-menu">
+<li class="header-app-button pad toggle-sub file-toggle" data-step="Use 'File' to create a new custom canvas size, open and save a .pixil file.">
+<div class="dropdown-type prevent-a">
+<span>
+<i class="fa fa-file-image-o" aria-hidden="true"></i> <span class="icon-stay-label">File</span>
+</span>
+<div class="sub-menu-wrapper">
+<div class="submit-menu">
+<div class="sub-menu-link online-remove" id="new-pix"><i class="fa fa-file-o fa-fw" aria-hidden="true"></i> New</div>
+<div class="sub-menu-link bbottom clear-new online-remove" id="new-pix"><i class="fa fa-trash-o fa-fw" aria-hidden="true"></i> Clear</div>
+<div class="sub-menu-link online-remove" id="open-pix"><i class="fa fa-folder-open fa-fw" aria-hidden="true"></i> Open .pixil</div>
+<div class="sub-menu-link save-as" id="save"><i class="fa fa-floppy-o fa-fw" aria-hidden="true"></i> Save as .pixil</div>
+<div class="sub-menu-link download-toggle bbottom" id="download-png"><i class="fa fa-download fa-fw" aria-hidden="true"></i> Download as .png, .gif</div>
+<div class="sub-menu-link online-remove" id="open-image-toggle"><i class="fa fa-file-image-o fa-fw" aria-hidden="true"></i> Open image <span class="beta-text">Beta</span></div>
+<a class="sub-menu-link color-white" id="draw-online-others" href="/online"><i class="fa fa-users fa-fw" aria-hidden="true"></i> Draw online with others</a>
+
+<div class="show-information sub-menu-link">
+<i class="fa fa-info-circle fa-fw" aria-hidden="true"></i> Help + Information
+</div>
+<div class="mobile-information sub-menu-link">
+<i class="fa fa-mobile fa-fw" aria-hidden="true"></i> Mobile App <span class="new-text">New!</span>
+</div>
+<div class="waves-effect waves-light sub-menu-link submit-drawing submit-drawing-bg"><i class="fa fa-star fa-fw" aria-hidden="true"></i> Save Drawing</div>
+</div>
+</div>
+</div>
+</li>
+<li class="header-app-button pad">
+<div class="settings-toggle ttip" title="Settings" data-step="Your settings are found here. You can enable more features like tracing, HUE change, themes, autosave and more.">
+<i class="fa fa-cogs" aria-hidden="true"></i> <span class="icon-label">Settings</span>
+</div>
+</li>
+<li class="header-app-button pad">
+<div class="download-toggle ttip" title="Download" data-step="You can download your drawing at any size here.">
+<i class="fa fa-download" aria-hidden="true"></i> <span class="icon-label">Download</span>
+</div>
+</li>
+<li class="header-app-button pad">
+<div id="undo" class="undo ttip" title="Undo (Ctrl + Z)">
+<i class="fa fa-undo" aria-hidden="true"></i> <span class="icon-label">Undo</span>
+</div>
+</li>
+<li class="header-app-button pad">
+<div id="redo" class="redo ttip" title="Redo (Ctrl + Y)">
+<i class="fa fa-repeat" aria-hidden="true"></i> <span class="icon-label">Redo</span>
+</div>
+</li>
+<li class="header-app-button pad full-screen-wrap ttip" title="Full Screen">
+<div id="full-screen">
+<i class="fa fa-desktop" aria-hidden="true"></i>
+</div>
+</li>
+</ul>
+</div>
+<div class="button-group-toolbar logo-placement">
+<ul class="header-menu logo-main">
+<li class="header-app-button pad toggle-sub menu-button-main">
+<div class="dropdown-type prevent-a">
+<i class="fa fa-bars" aria-hidden="true"></i> <span class="notifications-action"><span class="notification-count-drawing app ncount  soft-hidden "></span></span>
+<div class="sub-menu-wrapper">
+<div class="submit-menu outlinks-menu">
+<a href="/signup" class="sub-menu-link login-pop-up"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Sign up/Login</a>
+<a href="/online" class="sub-menu-link"><i class="fa fa-users fa-fw" aria-hidden="true"></i> Online Drawing</a>
+<a href="/gallery" class="sub-menu-link"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i> Gallery</a>
+<a href="/contests" class="sub-menu-link"><i class="fa fa-trophy fa-fw" aria-hidden="true"></i> Contests</a>
+<a href="/about" class="sub-menu-link"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i> About Pixilart</a>
+</div>
+</div>
+</div>
+</li>
+<li>
+
+<a href="/" id="logo-home" data-step-header="Welcome!" data-step-order="1" data-step="Hello and welcome to Pixilart drawing application. Click next for helpful tips.">
+<img class="large valign" src="https://static.pixilart.com/images/public/logo_pixilart_simple_full.png" id="header-logo" alt="Pixilart Logo">
+</a>
+</li>
+</ul>
+</div>
+<div class="button-group-toolbar right-section hide-mobile">
+<ul class="header-menu">
+<li class="header-app-button pad default-hidden ttip accept-selection" title="Accept">
+<div class="dropdown-type prevent-a">
+<i class="fa fa-check" aria-hidden="true"></i>
+</div>
+</li>
+<li class="header-app-button Select-tool-toggle pad default-hidden ttip" title="Rotate Left">
+<div class="dropdown-type prevent-a rotate-left" id="rotate-left">
+<i class="fa fa-undo" aria-hidden="true"></i>
+</div>
+</li>
+<li class="header-app-button Select-tool-toggle pad default-hidden ttip" title="Rotate Right">
+<div class="dropdown-type prevent-a rotate-right" id="rotate-right">
+<i class="fa fa-repeat" aria-hidden="true"></i>
+</div>
+</li>
+<li class="header-app-button Select-tool-toggle pad default-hidden ttip" title="Flip Vertical">
+<div class="dropdown-type prevent-a flip-right" id="flip-right">
+<i class="fa fa-random fa-rotate-90" aria-hidden="true"></i>
+</div>
+</li>
+<li class="header-app-button Select-tool-toggle pad default-hidden ttip" title="Flip Horizontal">
+<div class="dropdown-type prevent-a flip-top" id="flip-top">
+<i class="fa fa-random" aria-hidden="true"></i>
+</div>
+</li>
+
+<li class="header-app-button pad" data-step="You can save your drawing online and share with others here.">
+<div class="waves-effect waves-light submit-drawing submit-drawing-bg ttip" title="Save Drawing">
+<i class="fa fa-star" aria-hidden="true"></i> <span class="icon-label ipad-show-i show-m">Save <span class="ipad-hide-i">Drawing</span></span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="drawing-container" oncontextmenu="return false;">
+
+<div id="left-sidebar">
+
+<div class="tools-container clearfix default icon-set">
+<div class="tools-header">
+Tools
+</div>
+<div class="tool-selection tool-select active ttip" id="pencil-tool" data-type="Pencil" title="Pencil Tool (P)">
+<div class="icon-tool"></div>
+</div>
+<div class="tool-selection tool-select ttip" data-type="Eraser" id="eraser-tool" title="Eraser Tool (E)">
+<div class="icon-tool"></div>
+</div>
+<div class="tool-selection tool-select ttip" id="brush-tool" data-type="Brush" title="Brush Tool (R)">
+<div class="icon-tool"></div>
+</div>
+<div class="tool-selection tool-select ttip" data-type="Line" id="line-tool" title="Line Tool (L)">
+<div class="icon-tool"></div>
+</div>
+<div class="tool-selection tool-select ttip" data-type="Square" id="square-tool" title="Square Tool (Q)">
+<div class="icon-tool"></div>
+</div>
+<div class="tool-selection tool-select ttip" data-type="Circle" id="circle-tool" title="Circle Tool (C)">
+<div class="icon-tool"></div>
+</div>
+<div class="tool-selection tool-select ttip" id="bucket-tool" data-title="Bucket" title="Bucket (B)" data-type="Bucket" data-selection="bucket_tool">
+<div class="icon-tool"></div>
+</div>
+<div class="tool-selection tool-select ttip" data-type="ColorPicker" id="color-picker-tool" title="Color Picker Tool (V)">
+<div class="icon-tool"></div>
+</div>
+<div class="tool-selection tool-select ttip" data-type="Move" id="move-tool" title="Move Tool (M)">
+<div class="icon-tool"></div>
+</div>
+<div class="tool-selection tool-select ttip" id="select-tool" data-type="Select" title="Select Tool (S)">
+<div class="icon-tool"></div>
+</div>
+<div class="tool-selection tool-select hide-mobile ttip online-hidden" data-type="Text" id="text-tool" title="Text Tool (T)">
+<div class="icon-tool"></div>
+</div>
+<div class="tool-selection tool-select ttip" data-type="LightenDarken" id="lighten-darken-tool" title="Lighten Darken Tool (D)">
+<div class="icon-tool"></div>
+</div>
+<div class="tool-selection tool-select ttip" data-type="Dithering" id="dithering-tool" title="Dithering Tool (K)">
+<div class="icon-tool"></div>
+</div>
+<div class="tool-selection stamp-select ttip" data-type="Stamp" id="stamp-tool" title="Stamps Tool">
+<div class="icon-tool"></div>
+</div>
+<div class="non-tool-selection ttip hide-mobile online-remove" data-type="Crop" id="resize-pix" title="Crop Tool - Resize Drawing Canvas">
+<div class="icon-tool"></div>
+</div>
+
+<div class="color-selection-tools hide-mobile" data-step="Click the black and white boxes to add colors to the current color pallet and set the primary and secondary clicks.">
+<div class="color-selection">
+<div class="colors-pixil primary-color ttip" id="primary-color" data-type="primary" title="Primary Color - Select to change color.">
+</div>
+<div class="colors-pixil secondary-color ttip" id="secondary-color" data-type="secondary" title="Secondary Color - Select to change color - Right click to use on canvas.">
+</div>
+<div class="color-switchable hide-mobile ttip" title="Switch Primary & Secondary (X)">
+<i class="fa fa-expand fa-flip-horizontal fa-fw" aria-hidden="true"></i>
+</div>
+</div>
+</div>
+<div class="special-tools-wrapper">
+<div class="mirror-effect-toggle special-tool wrapper-double">
+<div class="mirror-tool ttip" id="mirror_x" data-type="x" title="Mirror X">
+<img src="https://static.pixilart.com/images/public/application/icon-mirror-x.png" alt="Mirrow X">
+</div>
+<div class="mirror-tool ttip" id="mirror_y" data-type="y" title="Mirror Y">
+<img src="https://static.pixilart.com/images/public/application/icon-mirror-y.png" alt="Mirrow Y">
+</div>
+</div>
+</div>
+</div>
+
+<div class="stamp-container">
+<div class="stamp_wrapper">
+<div class="stamp-header">
+<div>
+Stamps
+<span class="close-stamps-container show-mobile pull-right"><i class="fa fa-times" aria-hidden="true"></i> Close</span>
+</div>
+<br>
+<i class="fa fa-info-circle" aria-hidden="true"></i> Use CTRL-V (paste) to repeat the stamp
+</div>
+<div class="stamp-filtering-wrapper">
+<div class="search-filter-input">
+<input type="text" class="stamp-filter-by-search" id="stamp-search-input" name="searching-filter" placeholder="Search Stamp" />
+</div>
+<div class="button-filters">
+<div class="stamp-filter-btn active" data-filter="popular">Popular</div>
+<div class="stamp-filter-btn" data-filter="new">New</div>
+<div class="stamp-filter-btn" data-filter="favorite">Favorite</div>
+
+<div class="stamp-filter-btn" data-filter="yours">Private</div>
+</div>
+</div>
+<div class="stamps-preview-wrapper">
+
+<div class="append-stamps-preview">
+</div>
+<div class="stamp-show-more">
+Load more
+</div>
+<div class="loading-container">
+<i class="fa fa-spinner fa-spin"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="extra-tools-panel tool-extra dragable hide-mobile soft-hidden">
+<div class="drag-handle dragable-header">
+<span><i class="fa fa-bars fa-handle" aria-hidden="true"></i> <span id="tool-options-title">Tool</span> Options</span>
+<span class="close-extras-tools" data-self="true"><i class="fa fa-times" aria-hidden="true"></i></span>
+</div>
+<div class="extra-panel-content tool-content-shows">
+<div class="bush-canvas-wrapper check-tool" data-tool="brush">
+<div class="tool-title">
+Current Brush (Click to change)
+</div>
+<div class="brush-canvas-wrapper">
+<img src="" class="brush-image pp" height="100px">
+</div>
+<div class="toggle-option">
+<input type="checkbox" class="check-box filled-in form-control-app" id="brush-toggle-solid" value="0" checked="checked" />
+<label for="brush-toggle-solid" class="tool-toggle" data-set="fill">
+Solid Color
+<div class="toggle-label-helper">
+Toggle to create solid color
+</div>
+</label>
+</div>
+<div class="toggle-option">
+<input type="checkbox" class="check-box filled-in form-control-app" id="brush-toggle-track" value="0" checked="checked" />
+<label for="brush-toggle-track" class="tool-toggle" data-set="track">
+Track
+<div class="toggle-label-helper">
+Trail brush with each stroke
+</div>
+</label>
+</div>
+<div class="lighten-size">
+<div class="tool-title">
+Spacing (<span class="brush-spacing-level">0</span>)
+</div>
+<div class="range-wrapper">
+<input type="range" value="0" id="brush-spacing" min="0" max="50" />
+</div>
+</div>
+<div class="lighten-size">
+<div class="tool-title">
+Opacity (<span class="brush-alpha-level">1</span>)
+</div>
+<div class="range-wrapper">
+<input type="range" value="1" id="brush-alpha" min="0.1" step="0.1" max="1" />
+</div>
+</div>
+<div class="tool-helper-wrapper">
+<div class="tool-title">
+Setting Brush
+</div>
+<div class="toggle-label-helper">
+To assign a custom brush - simply use the select tool and select the desired area
+</div>
+</div>
+</div>
+<div class="panel-select check-tool" data-tool="text">
+<div class="tool-title">
+Select Font
+</div>
+<div class="dropdown-tool-container">
+<select class="fonts-selection select-back">
+<option value="default">Default Font</option>
+</select>
+</div>
+</div>
+<div class="panel-select check-tool" data-tool="pencil">
+<div class="toggle-option">
+<input type="checkbox" class="check-box filled-in form-control-app perfect-toggle" id="pixel-ct-toggle" value="0" name="pixel-perfect" data-force="true" />
+<label for="pixel-ct-toggle">
+Pixel Perfect
+<div class="toggle-label-helper">
+Clean strokes while free hand drawing
+</div>
+</label>
+</div>
+</div>
+<div class="panel-select check-tool" data-tool="bucket">
+<div class="toggle-option">
+<input type="checkbox" class="check-box filled-in form-control-app" id="all-colors-bucket" value="0" />
+<label for="all-colors-bucket" class="tool-toggle" data-set="allColors">
+All Similar Colors
+<div class="toggle-label-helper">
+Select all colors on the canvas
+</div>
+</label>
+</div>
+<div class="toggle-option">
+<input type="checkbox" class="check-box filled-in form-control-app tool-toggle" id="clear-bucket" value="0">
+<label for="clear-bucket" class="tool-toggle" data-set="clear">
+Clear Pixels
+<div class="toggle-label-helper">
+Will clear pixels
+</div>
+</label>
+</div>
+</div>
+<div class="panel-select check-tool" data-tool="line">
+<div class="toggle-option iso-option">
+<input type="checkbox" class="check-box filled-in form-control-app iso-lines-toggle" id="iso-lines-toggle" value="0" name="iso-lines" data-force="true" />
+<label for="iso-lines-toggle">
+ISO Lines
+<div class="toggle-label-helper">
+Draw in isometric format (SHIFT)
+</div>
+</label>
+</div>
+</div>
+<div class="panel-select check-tool" data-tool="lightendarken">
+<div class="toggle-option">
+<input type="checkbox" class="check-box filled-in form-control-app" id="lighter-color" value="0" />
+<label for="lighter-color" class="tool-toggle" data-set="light">
+Lighter Color
+<div class="toggle-label-helper">
+Toggle to switch to the lighter color (right+click)
+</div>
+</label>
+</div>
+<div class="lighten-size">
+<div class="tool-title">
+Strength (<span class="ligtendarken-level">1</span>)
+</div>
+<div class="range-wrapper">
+<input type="range" value="1" id="lightendarken-range-size" min="1" max="9" />
+</div>
+</div>
+</div>
+<div class="panel-select check-tool" data-tool="select">
+<div class="pdbtm">
+<div class="tool-title">
+Transform
+</div>
+<ul class="nomg inline-btns">
+<li class="options-app-button Select-tool-toggle pad default-hidden ttip" title="Rotate Left">
+<div class="dropdown-type prevent-a rotate-left" id="rotate-left">
+<i class="fa fa-undo" aria-hidden="true"></i>
+</div>
+</li>
+<li class="options-app-button Select-tool-toggle pad default-hidden ttip" title="Rotate Right">
+<div class="dropdown-type prevent-a rotate-right" id="rotate-right">
+<i class="fa fa-repeat" aria-hidden="true"></i>
+</div>
+</li>
+<li class="options-app-button Select-tool-toggle pad default-hidden ttip" title="Flip Vertical">
+<div class="dropdown-type prevent-a flip-right" id="flip-right">
+<i class="fa fa-random fa-rotate-90" aria-hidden="true"></i>
+</div>
+</li>
+<li class="options-app-button Select-tool-toggle pad default-hidden ttip" title="Flip Horizontal">
+<div class="dropdown-type prevent-a flip-top" id="flip-top">
+<i class="fa fa-random" aria-hidden="true"></i>
+</div>
+</li>
+</ul>
+</div>
+<div class="accept-selection soft-hidden">
+<div class="tool-title">
+Accept
+</div>
+<ul class="nomg inline-set">
+<li class="options-app-button pad ttip" title="Accept">
+<div class="dropdown-type prevent-a">
+<i class="fa fa-check" aria-hidden="true"></i>
+</div>
+</li>
+</ul>
+</div>
+<div class="save-stamp-selection-set soft-hidden mgbtm">
+<div class="tool-title nomgtp">
+Custom Brush
+</div>
+<ul class="nomg inline-set">
+<li class="options-app-button pad default-hidden set-brush">
+<div class="dropdown-type prevent-a">
+<i class="fa fa-paint-brush" aria-hidden="true"></i> <span class="icon-label">Set Brush</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="extra-tools-panel options-panel dragable hide-mobile" id="draggable-extras">
+<div class="drag-handle dragable-header" data-step="You can move this panel around or remove it.">
+<span><i class="fa fa-bars fa-handle" aria-hidden="true"></i> Options</span>
+<span class="close-extras ttip" title="You can enable in settings."><i class="fa fa-times" aria-hidden="true"></i></span>
+</div>
+<div class="drawing-tool-container">
+<div class="navigation-scroller">
+<div class="nav-canvas-wrapper">
+<div class="nav-canvas-content">
+
+<div class="nav-placement" id="nav-placement"></div>
+<img src="" class="nav-canvas-img noselect" id="nav-canvas-img" alt="Navigation image" />
+
+</div>
+</div>
+</div>
+<div class="zoom-buttons-wrapper">
+<div class="zoom-in-btn"><i class="fa fa-search-plus" aria-hidden="true"></i> Zoom in</div>
+<div class="zoom-out-btn"><i class="fa fa-search-minus" aria-hidden="true"></i> Zoom out</div>
+</div>
+<div class="preview-buttons-cont">
+<div class="preview-buttons-wrapper">
+<div class="header-app-button ttip" id="preview" title="Preview (Space)">
+<i class="fa fa-play-circle" aria-hidden="true"></i> PREVIEW
+</div>
+<select class="preview-select select-back header-app-button hide-mobile" id="preview-size-change">
+<option value="1">1:1</option>
+<option value="2">2:2</option>
+<option value="4">4:4</option>
+<option value="default">Default</option>
+<option value="default" selected="selected">PREVIEW SIZE</option>
+</select>
+</div>
+</div>
+<div class="toggle-option rainbow-toggle-option ttip" title="This will change the value of the current color as you draw with each stroke">
+<input type="checkbox" class="check-box filled-in form-control-app rainbow-toggle" id="rainbow-ct-toggle" value="0" name="rainbow-perfect" data-force="true" />
+<label for="rainbow-ct-toggle">Rainbow Color</label>
+</div>
+<div class="toggle-option rainbow-toggle-option ttip" title="All tools use dithering drawing (Shift+X)">
+<input type="checkbox" class="check-box filled-in form-control-app dithering-toggle" id="dithering-ct-toggle" value="0" name="dithering-perfect" data-force="true" />
+<label for="dithering-ct-toggle">Dithering</label>
+</div>
+<div class="toggle-option random-toggle-option ttip soft-hidden" title="This will result in random colors from your current color pallet for each pixel">
+<input type="checkbox" class="check-box filled-in form-control-app random-color-toggle" id="random-ct-toggle" value="0" name="random-perfect" data-force="true" />
+<label for="random-ct-toggle">Random Color</label>
+</div>
+<div class="pixel-size">
+<div class="size-pixel-wrapper">
+Pixel Size (<span class="pixel-size-drawing">1</span>):
+</div>
+<div class="pixel-range-wrapper">
+<input type="range" value="1" id="pixel-range-size" min="1" step="1" max="16" />
+</div>
+</div>
+
+<div class="row-section">
+<div class="defaul-app-button ttip" id="align-left" title="Align Left">
+<i class="fa fa-align-left" aria-hidden="true"></i>
+</div>
+<div class="defaul-app-button ttip" id="align-top" title="Align Top">
+<i class="fa fa-align-justify" aria-hidden="true"></i>
+</div>
+<div class="defaul-app-button ttip" id="align-center" title="Align Center">
+<i class="fa fa-align-center" aria-hidden="true"></i>
+</div>
+<div class="defaul-app-button ttip" id="align-bottom" title="Align Bottom">
+<i class="fa fa-align-justify" aria-hidden="true"></i>
+</div>
+<div class="defaul-app-button ttip" id="align-right" title="Align Right">
+<i class="fa fa-align-right" aria-hidden="true"></i>
+</div>
+</div>
+
+<div class="extras-color soft-hidden panel color hide-mobile">
+<div class="panel-header-helpers">
+<select id="color-presets" class="color-presets half-pan select-back">
+</select>
+<div class="defaul-app-button half-pan new-preset-color ttip" title="New Color Preset" id="new-preset-color"><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+</div>
+<div class="panel-container color-container" id="color-container" oncontextmenu="return false;">
+</div>
+<div id="panel-buttons">
+<div class="row-section">
+<div class="defaul-app-button ttip add-color" id="add-color" data-type="primary" title="Add Color">
+<i class="fa fa-plus-circle" aria-hidden="true"></i> <span class="show-mobile">Add Color</span>
+</div>
+<div class="defaul-app-button hide-mobile ttip export-colors" id="export-colors" title="Export Colors">
+<i class="fa fa-share-square-o" aria-hidden="true"></i>
+</div>
+<div class="defaul-app-button hide-mobile ttip import-colors" id="import-colors" title="Import Colors">
+<i class="fa fa-eyedropper" aria-hidden="true"></i>
+</div>
+<div class="defaul-app-button hide-mobile ttip get-layer-colors" id="get-layer-colors" title="Get colors from the current frame to the current color preset">
+<i class="fa fa-tint" aria-hidden="true"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="drawing-canvas-conatiner" oncontextmenu="return false;">
+
+<div class="cords-drawing-container hide-mobile">
+X: <span class="mouse-x">0</span>,
+Y: <span class="mouse-y">0</span>
+<br>
+P: <span class="position-a">0</span>
+</div>
+<div class="size-drawing-container hide-mobile">
+<div class="width-height">
+Width: <span class="width">256</span>px<br>
+Height: <span class="height">144</span>px
+</div>
+</div>
+
+<div class="preview-container active">
+<div class="close-preview close-preview-button hidden">
+<i class="fa fa-times fa-fw"></i>
+</div>
+<div class="preview-wrapper">
+<div class="preview-loading">
+<div class="cssload-thecube">
+<div class="cssload-cube cssload-c1"></div>
+<div class="cssload-cube cssload-c2"></div>
+<div class="cssload-cube cssload-c4"></div>
+<div class="cssload-cube cssload-c3"></div>
+</div>
+<div class="app-start-section">
+
+<div class="b">
+Loading.. <span class="loading-percent"></span>
+</div>
+<div class="older-version-text soft-hidden">
+<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Not loading? You can access the older version <a href="https://www.pixilart.com/old">here</a>.
+</div>
+</div>
+</div>
+<div class="close-preview-wrapper close-preview-button">
+</div>
+<div class="preview-content after-app-ready-show">
+<div class="preview-content-append"></div>
+<div class="preview-download download-preview" id="download-preview">
+Download GIF
+</div>
+</div>
+</div>
+</div>
+<div id="canvas-layers-container" oncontextmenu="return false;">
+<div class="select-helpers hide-mobile">
+<div class="select-tools-wrapper clearfix">
+<div class="select-tool select-help ttip" id="select-info" title="Ctrl+C for Copy, Ctrl+V for Paste, Ctrl+X for Cut">
+<i class="fa fa-question-circle" aria-hidden="true"></i>
+</div>
+<div class="select-tool save-text-selection" id="font-selection" title="Assign selection to a custom font">
+<i class="fa fa-font" aria-hidden="true"></i> Font
+</div>
+<div class="select-tool" id="copy-selection" title="Ctrl+C for Copy">
+<i class="fa fa-files-o" aria-hidden="true"></i> Copy
+</div>
+<div class="select-tool" id="paste-selection" title="Ctrl+V for Paste">
+<i class="fa fa-clipboard" aria-hidden="true"></i> Paste
+</div>
+<div class="select-tool" id="cut-selection" title="Ctrl+X for Cut">
+<i class="fa fa-scissors" aria-hidden="true"></i> Cut
+</div>
+</div>
+</div>
+<div id="canvas-layers-appened" class="appened-drawing">
+</div>
+</div>
+</div>
+
+<div id="right-sidebar" oncontextmenu="return false;">
+
+<div class="panel layers">
+<div class="panel-header">
+Layers
+</div>
+<div class="panel-container" id="layers-container">
+</div>
+<div id="panel-buttons">
+<div class="opacity-change ttip" title="Opacity">
+<div class="opacity-number" id="opacity-layer-number">
+1
+</div>
+<div class="opacity-range">
+<input id="opacity-layer" max="1" min="0" step="0.05" type="range" value="1">
+</div>
+</div>
+</div>
+<div class="extrude-from-layers ttip" id="hue-extrude" title="Change HUE of current layer">
+<div id="panel-buttons">
+<div class="hue-change-container">
+<div class="hue-range">
+<div class="extrude-header">HUE (<span class="hue-update">0</span>)</div>
+<input id="hue-changer" max="180" min="-180" step="1" type="range" value="0">
+<div class="hue-wrapper clearfix">
+<div class="hue-text hue-left">-180</div>
+<div class="hue-text hue-right">180</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="panel-buttons" class="layer-buttons" data-step="Add layers, move, rename, remove, duplicate and merge layers here.">
+<div class="row-section">
+<div class="defaul-app-button ttip" id="add-layer" title="Add Layer">
+<i class="fa fa-plus-circle" aria-hidden="true"></i>
+</div>
+<div class="defaul-app-button move-layer ttip" data-direction="up" id="move-layer" title="Move Layer Up">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+</div>
+<div class="defaul-app-button move-layer ttip" data-direction="down" id="move-layer" title="Move Layer Down">
+<i class="fa fa-arrow-down" aria-hidden="true"></i>
+</div>
+<div class="defaul-app-button ttip" id="rename-layer" title="Rename Layer">
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+</div>
+</div>
+<div class="row-section" id="forced-step">
+<div class="defaul-app-button ttip" id="delete-layer" title="Delete Layer">
+<i class="fa fa-trash" aria-hidden="true"></i>
+</div>
+<div class="defaul-app-button ttip" id="duplicate-layer" title="Duplicate Layer">
+<i class="fa fa-files-o" aria-hidden="true"></i>
+</div>
+<div class="defaul-app-button merge ttip" data-direction="up" id="move-layer" title="Merge Layer Up">
+<i class="fa fa-caret-square-o-up" aria-hidden="true"></i>
+</div>
+<div class="defaul-app-button merge ttip" data-direction="down" id="move-layer" title="Merge Layer Down">
+<i class="fa fa-caret-square-o-down" aria-hidden="true"></i>
+</div>
+</div>
+</div>
+</div>
+
+<div class="panel color hide-mobile">
+<div class="panel-header">
+Colors
+</div>
+<div class="panel-header-helpers">
+<select id="color-presets" class="color-presets half-pan select-back">
+</select>
+<div class="defaul-app-button half-pan new-preset-color ttip" title="New Color Preset" id="new-preset-color"><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+</div>
+<div class="panel-container color-container" id="color-container" oncontextmenu="return false;">
+</div>
+<div id="panel-buttons">
+<div class="row-section" data-step="You can add colors, export, import and get colors from the canvas here.">
+<div class="defaul-app-button ttip add-color" id="add-color" data-type="primary" title="Add Color">
+<i class="fa fa-plus-circle" aria-hidden="true"></i> <span class="show-mobile">Add Color</span>
+</div>
+<div class="defaul-app-button hide-mobile ttip export-colors" id="export-colors" title="Export Colors">
+<i class="fa fa-share-square-o" aria-hidden="true"></i>
+</div>
+<div class="defaul-app-button hide-mobile ttip import-colors" id="import-colors" title="Import Colors">
+<i class="fa fa-eyedropper" aria-hidden="true"></i>
+</div>
+<div class="defaul-app-button hide-mobile ttip get-layer-colors" id="get-layer-colors" title="Get colors from the current frame to the current color preset">
+<i class="fa fa-tint" aria-hidden="true"></i>
+</div>
+</div>
+</div>
+</div>
+
+<div class="mouse-information">
+<div class="width-height"><span class="width">256</span> x <span class="height">144</span></div>
+X: <span class="mouse-x">0</span>,
+Y: <span class="mouse-y">0</span>, P: <span class="position-a">0</span>
+</div>
+
+<div class="panel-extras hide-mobile">
+<div class="button-panel-empty">
+<input type="checkbox" checked="checked" class="check-box filled-in form-control-app extras-toggle" id="extras-toggle" value="0" name="extras" />
+<label for="extras-toggle">Show Panels</label>
+</div>
+<div class="button-panel-empty ipad-hide-i">
+<input type="checkbox" class="check-box filled-in form-control-app extras-colors-toggle" id="extras-colors-toggle" value="0" name="extras-colors" />
+<label for="extras-colors-toggle">Colors in Options Panel</label>
+</div>
+<div class="button-panel-empty ipad-hide-i frames-lock-wrapper">
+<input type="checkbox" class="check-box filled-in form-control-app frames-lock-toggle" id="frames-lock-toggle" value="0" />
+<label for="frames-lock-toggle">Lock Frames Panel</label>
+</div>
+</div>
+</div>
+</div>
+
+<div class="mobile-header show-mobile">
+<div class="colors-bar-wrapper color-container">
+<div class="color color-popup"></div>
+</div>
+<div class="half-group clearfix">
+<div class="third-section">
+<a href="#" class="mobile-btn waves-effect waves-light" id="tools-toggle"><i class="fa fa-pencil" aria-hidden="true"></i> Tools</a>
+</div>
+<div class="third-section">
+<a href="#" class="mobile-btn waves-effect waves-light frames-toggle" id="frames-toggle"><i class="fa fa-film" aria-hidden="true"></i> Frames</a>
+</div>
+<div class="third-section">
+<a href="#" class="mobile-btn waves-effect waves-light" id="layers-toggle"><i class="fa fa-object-ungroup" aria-hidden="true"></i> Layers</a>
+</div>
+</div>
+
+</div>
+
+<div class="footer-mobile-buttons show-mobile">
+<div class="mobile-buttons-footer">
+<a href="#" class="mobile-btn waves-effect waves-light zoom-in-btn"><i class="fa fa-search-plus fa-fw" aria-hidden="true"></i></a>
+<a href="#" class="mobile-btn waves-effect waves-light zoom-out-btn"><i class="fa fa-search-minus fa-fw" aria-hidden="true"></i></a>
+<a href="#" class="mobile-btn waves-effect waves-light undo"><i class="fa fa-undo fa-fw" aria-hidden="true"></i></a>
+<a href="#" class="mobile-btn waves-effect waves-light redo"><i class="fa fa-repeat fa-fw" aria-hidden="true"></i></a>
+<a href="#" class="mobile-btn waves-effect waves-light settings-toggle" id="settings-toggle"><i class="fa fa-cog fa-fw" aria-hidden="true"></i></a>
+<a href="#" class="mobile-btn waves-effect waves-light clear-new"><i class="fa fa-trash fa-fw" aria-hidden="true"></i></a>
+</div>
+<div class="mobile-buttons-footer">
+<a href="#" class="submit-drawing submit-drawing-bg">
+<i class="fa fa-star" aria-hidden="true"></i> Save Drawing
+</a>
+</div>
+</div>
+
+<div class="panel frames" id="frames-placement" oncontextmenu="return false;">
+<div class="panel-header panel-frames-header ttip" title="Click to toggle frames panel" data-step="Create animations using this panel. Click to show current frames. You can add, duplicate and preview animations.">
+<div class="header-app-button none-button frames-title">
+<span class="hide-mobile">GIF Frames <span class="frames-counter-wrapper soft-hidden">(<span class="current-frame"></span>/<span class="frame-count"></span>)</span></span>
+<span class="close-button-frames show-mobile"><i class="fa fa-times" aria-hidden="true"></i> Close</span>
+</div>
+<div class="header-app-button ttip add-frame" id="add-frame" title="Add Frame (Shift+A)">
+<i class="fa fa-plus"></i> <span class="inline-frame-bt">Add Frame</span>
+</div>
+<div class="header-app-button ttip duplicate-frame" id="duplicate-frame" title="Duplicate Frame (Shift+D)">
+<i class="fa fa-files-o" aria-hidden="true"></i> <span class="inline-frame-bt">Copy Frame</span>
+</div>
+<div class="header-app-button ttip preview" id="preview" title="Preview (Space)">
+<i class="fa fa-play-circle" aria-hidden="true"></i> <span class="inline-frame-bt">Preview</span>
+</div>
+<div class="header-app-button show-mobile download-preview">
+<i class="fa fa-download" aria-hidden="true"></i>
+</div>
+<select class="preview-select select-back header-app-button ttip hide-mobile" title=" " id="preview-size-change">
+<option value="1">1:1</option>
+<option value="2">2:2</option>
+<option value="4">4:4</option>
+<option value="default">Default</option>
+<option value="default" selected="selected">Preview Size</option>
+</select>
+</div>
+<div class="panel-container" id="frames-container">
+<div class="frames-controls">
+<div class="frame-action-text">Controls</div>
+<div class="frame-button frame-move ttip" title="Move Left" data-direction="left"><i class="fa fa-arrow-left fa-fw" aria-hidden="true"></i></div>
+<div class="frame-button frame-move ttip" title="Move Right" data-direction="right"><i class="fa fa-arrow-right fa-fw" aria-hidden="true"></i></div>
+<div class="frame-button frame-delete ttip" title="Remove Frame"><i class="fa fa-trash fa-fw" aria-hidden="true"></i></div>
+<span class="pull-right all-frames-right hide-mobile">
+<div class="frame-action-text">All Frames</div>
+<select class="all-frames-speed select-back header-app-button ttip" title="Updates all frames speed">
+<option value="n" selected="selected">Frame Speed</option>
+<option value="50">50 ms</option>
+<option value="100">100 ms</option>
+<option value="250">250 ms</option>
+<option value="500">500 ms</option>
+<option value="1000">1000 ms</option>
+<option value="2500">2500 ms</option>
+<option value="5000">5000 ms</option>
+</select>
+</span>
+</div>
+<div class="frames-appended" id="frames-appended">
+</div>
+</div>
+</div>
+
+<div id="simple-ad">
+<div class="ad-close" title="Close Advertisement">
+<i class="fa fa-times fa-fw" aria-hidden="true"></i>
+</div>
+<div class="ad-placement-main">
+
+<div class="ad-append-placement">
+</div>
+</div>
+</div>
+
+<div id="popup-container">
+<div class="popup-container-wrapper">
+<div class="popup-close-button show-mobile mobile-close-button">
+<i class="fa fa-times" aria-hidden="true"></i>
+</div>
+<div class="popup-close"></div>
+<div class="popup-wrapper">
+<div class="popup-close-button hide-mobile">
+<i class="fa fa-times" aria-hidden="true"></i>
+</div>
+<div class="p-header">
+Header
+</div>
+<div class="p-content-wrap">
+<div class="p-content-sidebar-head">
+<a href="#" class="waves-effect waves-light p-content-btn active new-pix p-new online-remove"><i class="fa fa-file-o fa-fw" aria-hidden="true"></i> New</a>
+<a href="#" class="waves-effect waves-light p-content-btn hide-mobile save-as p-save"><i class="fa fa-object-group fa-fw" aria-hidden="true"></i> Save as .pixil</a>
+<a href="#" class="waves-effect waves-light p-content-btn settings-toggle p-settings"><i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Settings</a>
+<a href="#" class="waves-effect waves-light p-content-btn download-toggle p-download"><i class="fa fa-download fa-fw" aria-hidden="true"></i> Download .png, .gif</a>
+<a href="#" class="waves-effect waves-light p-content-btn show-information p-info"><i class="fa fa-keyboard-o fa-fw" aria-hidden="true"></i> Key Bindings</a>
+<a href="#" class="waves-effect waves-light p-content-btn show-font-settings p-custom-text"><i class="fa fa-font fa-fw" aria-hidden="true"></i> Custom Font</a>
+<a href="#" class="waves-effect waves-light p-content-btn current-progress p-progress hide-mobile hide-ip-d"><i class="fa fa-film fa-fw" aria-hidden="true"></i> Replay</a>
+<a href="#" class="waves-effect waves-light p-content-btn mobile-information p-mobile"><i class="fa fa-mobile fa-fw" aria-hidden="true"></i> Mobile App <span class="new-text">New!</span></a>
+<a href="#" class="waves-effect waves-light p-content-btn about-information p-about ls"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i> About</a>
+<div class="share-popup-container hide-mobile">
+<div class="share-h">
+Share this app!
+</div>
+<a href="http://www.facebook.com/sharer/sharer.php?u=https://www.pixilart.com/draw&title=Pixel Drawing Application - Pixilart" target="_blank" class="share-button-image facebook fc"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a>
+<a data-via="pixil_art" data-text="Pixel Drawing Application - Pixilart" data-hashtags="pixilart,pixelart" data-url="https://www.pixilart.com/draw" href="https://twitter.com/intent/tweet?text=Pixilart - Pixel Drawing Application - https://www.pixilart.com/draw&hashtags=pixilart,pixelart" target="_blank" class="share-button-image twitter"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
+<a href="https://plus.google.com/share?url=https://www.pixilart.com/draw" target="_blank" class="share-button-image google"><i class="fa fa-google-plus fa-fw" aria-hidden="true"></i></a>
+<a href="//www.reddit.com/submit?url=https://www.pixilart.com/draw" class="share-button-image reddit"><i class="fa fa-reddit-alien fa-fw" aria-hidden="true"></i></a>
+</div>
+</div>
+<div class="p-content">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="resize-menu" class="resize-menu hidden" data-header="Resize Drawing">
+<div class="new-wrapper">
+<div class="customer-setup hide-mobile">
+Max 700 pixels in width and height. Must be greater than 35% ratio of width and height.
+<br>
+<div class="input-half-container clearfix">
+<div class="input-wrapper">
+<label>
+Width<br>
+<input value="" placeholder="Width" type="number" min="1" max="500" class="form-control-app new-width" />
+</label>
+</div>
+<div class="input-wrapper">
+<label>
+Height<br>
+<input value="" placeholder="Height" type="number" min="1" max="500" class="form-control-app new-height" />
+</label>
+</div>
+</div>
+</div>
+<div class="error-submitting resize-file-error">
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <span class="error-message-file"></span>
+</div>
+<div class="new-btn-ct fixed-submit">
+<a id="new-drawing-submit" class="resize-drawing-submit resize-drawing-a waves-effect waves-light btn z-depth-0 blue accent-3">Resize Drawing</a>
+</div>
+</div>
+</div>
+<div id="mobile-information" class="mobile-info-content hidden" data-header="Mobile App">
+<div class="above-container mobile">
+<div class="lgmgtop">
+<h1 class="color-white">Pixilart Mobile App</h1>
+<h2>Create pixel art on the go. The Pixilart mobile app is free and features a community of pixel loving enthusiast.</h2>
+</div>
+<div class="inline mgtop">
+<a href="https://play.google.com/store/apps/details?id=com.pixilart.app&hl=en" class="pixilart-app-external mgrht mgbtm">
+<img src="https://static.pixilart.com/images/public/google-play-badge.png" height="60px" alt="Get it on Google Play" />
+</a>
+<div class="show-mobile full-width mgtop">
+</div>
+<a href="https://itunes.apple.com/us/app/pixilart/id1440580518" class="pixilart-app-external">
+<img src="https://static.pixilart.com/images/public/badge-example-preferred.png" height="60px" alt="Download on the App Store" />
+</a>
+</div>
+</div>
+</div>
+<div id="progress-content" class="progress-content hidden" data-header="Current Progress">
+<div class="progress-container">
+<strong>Drawing Replay</strong> - Beta<br>
+Snapshots of your drawing in 30 frames or less.
+<div class="download-progress-preview soft-hidden">Donwload</div>
+<div class="progress-images-container">
+<img src="" class="progress-images" alt="progress preview" />
+</div>
+</div>
+</div>
+
+<div id="ad-popup-content" class="ad-content hidden hide-mobile">
+<div class="ad-placement-content">
+<div class="ad-close-set">
+<i class="fa fa-times fa-fw"></i>
+</div>
+<div class="mobile-information clickable" target="_blank">
+<img src="https://static.pixilart.com/images/public/drawing-ad.png" style="max-width: 100%" alt="Pixilart App" />
+</div>
+</div>
+</div>
+<div id="new-menu" class="new-menu hidden" data-header="New Drawing">
+<div class="tab-container">
+<div class="tab-header-wrapper hide-mobile">
+<a href="#" class="tab-header border-bottom open-pix-callout"><i class="fa fa-folder-open fa-fw" aria-hidden="true"></i> Open .pixil</a>
+<a href="#" class="tab-header active" data-for=".new-drawing"><i class="fa fa-file-image-o fa-fw" aria-hidden="true"></i> New</a>
+<a href="#" class="tab-header hide-ip-d" data-for=".new-from-bases"><i class="fa fa-paint-brush fa-fw" aria-hidden="true"></i> Bases</a>
+<a href="#" class="tab-header" data-for=".new-from-collab"><i class="fa fa-users fa-fw" aria-hidden="true"></i> Collabs</a>
+</div>
+<div class="tab-content-wrapper">
+<div class="tab-content new-drawing active">
+<div class="mgbtm">
+<strong>New Drawing</strong>
+<p>Start a new drawing. Max 700 pixels in width and height.</p>
+</div>
+<div class="callout mgbtm grey color-black lighten-3">
+<div class="fixed-row row">
+<div class="col s12 m6">
+<strong>🌄 Daily Drawing Challenge</strong><br>
+Today's Challenge: <strong>Flying</strong>
+</div>
+<div class="col s12 m6 text-right">
+<br>
+<a href="/search?term=challenge" class="color-black" target="_blank">View today's challenges <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+</div>
+</div>
+</div>
+<div class="fixed-row row">
+<div class="col s12 l12">
+Presets
+<div class="presets-wrapper clearfix mgbtm">
+<div class="preset-ct preset-select hide-mobile" data-width="16" data-height="16">Favicon</div>
+<div class="preset-ct preset-select hide-mobile" data-width="rand" data-height="rand">Random</div>
+<div class="preset-ct preset-select" data-width="32" data-height="32">32x32</div>
+<div class="preset-ct preset-select" data-width="100" data-height="100">100x100</div>
+<div class="preset-ct preset-select active hide-mobile" data-width="256" data-height="144">256x144</div>
+<div class="preset-ct preset-select hide-mobile" data-width="500" data-height="500">500x500</div>
+</div>
+</div>
+<div class="col s12 l12">
+<div class="input-wrapper">
+<label>
+Width (px)<br>
+<input value="" placeholder="Width" type="number" min="1" max="500" class="form-control-app new-width grey-input-text" />
+</label>
+</div>
+<div class="input-wrapper">
+<label>
+Height (px)<br>
+<input value="" placeholder="Height" type="number" min="1" max="500" class="form-control-app new-height grey-input-text" />
+</label>
+</div>
+<div class="error-submitting new-file-error">
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <span class="error-message-file"></span>
+</div>
+<div class="new-btn-ct fixed-submit">
+<a id="new-drawing-submit" class="new-drawing-submit new-drawing-a waves-effect waves-light btn z-depth-0 blue accent-3">New Drawing</a>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-content new-from-bases">
+<div class="mgbottom">
+<strong>Base Drawings</strong>
+<p>Start a new from a drawing base.</p>
+</div>
+<div class="fixed-row row">
+<div class="col l4">
+<div class="mgbtm">
+<div class="render" id="art-image-1369375" data-id="1369375" data-last="1369375">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="1369375">
+<a href="/draw/flag-fun-e3a45a7402dfc9d" class="select-shop-a" data-art="e3a45a7402dfc9d">
+<div class="img_header" id="img-main">
+<img alt="Flag Fun" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/e3a45a7402dfc9d.png" border="0" title="Flag Fun">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/teumessian-fox" target="_blank">Teumessian-Fox</a>
+</div>
+</div>
+<div class="mgbtm">
+<div class="render" id="art-image-1095778" data-id="1095778" data-last="1095778">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="1095778">
+<a href="/draw/girl-base-d78cd88decf190c" class="select-shop-a" data-art="d78cd88decf190c">
+<div class="img_header" id="img-main">
+<img alt="Girl Base" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/d78cd88decf190c.png" border="0" title="Girl Base">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/beowulf77" target="_blank">Beowulf77</a>
+</div>
+</div>
+<div class="mgbtm">
+<div class="render" id="art-image-675517" data-id="675517" data-last="675517">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="675517">
+<a href="/draw/sailor-girl-base-42ba54e0d349e31" class="select-shop-a" data-art="42ba54e0d349e31">
+<div class="img_header" id="img-main">
+<img alt="Sailor girl base " class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/42ba54e0d349e31.png" border="0" title="Sailor girl base ">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/umaite" target="_blank">umaite</a>
+</div>
+</div>
+<div class="mgbtm">
+<div class="render" id="art-image-269159" data-id="269159" data-last="269159">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="269159">
+<a href="/draw/typical-1c43dbb61dc05a6" class="select-shop-a" data-art="1c43dbb61dc05a6">
+<div class="img_header" id="img-main">
+<img alt="Typical" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/1c43dbb61dc05a6.png" border="0" title="Typical">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/kido" target="_blank">Kido</a>
+</div>
+</div>
+</div>
+<div class="col l4">
+<div class="mgbtm">
+<div class="render" id="art-image-1740566" data-id="1740566" data-last="1740566">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="1740566">
+<a href="/draw/pixilart-logo-base-67f4224bd48b0f8" class="select-shop-a" data-art="67f4224bd48b0f8">
+<div class="img_header" id="img-main">
+<img alt="Pixilart logo Base" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/67f4224bd48b0f8.png" border="0" title="Pixilart logo Base">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/z3ro" target="_blank">Z3RO</a>
+</div>
+</div>
+<div class="mgbtm">
+<div class="render" id="art-image-1182094" data-id="1182094" data-last="1182094">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="1182094">
+<a href="/draw/catwarrior-cat-base-8394505e38204d6" class="select-shop-a" data-art="8394505e38204d6">
+<div class="img_header" id="img-main">
+<img alt="Cat/warrior cat base" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/8394505e38204d6.png" border="0" title="Cat/warrior cat base">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/meekly" target="_blank">Meekly</a>
+</div>
+</div>
+<div class="mgbtm">
+<div class="render" id="art-image-744570" data-id="744570" data-last="744570">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="744570">
+<a href="/draw/doge-base-f323019e061879b" class="select-shop-a" data-art="f323019e061879b">
+<div class="img_header" id="img-main">
+<img alt="Doge Base" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/f323019e061879b.png" border="0" title="Doge Base">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/terphic" target="_blank">Terphic</a>
+</div>
+</div>
+<div class="mgbtm">
+<div class="render" id="art-image-648296" data-id="648296" data-last="648296">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="648296">
+<a href="/draw/original-base-read-rules-5cf54f26622065a" class="select-shop-a" data-art="5cf54f26622065a">
+<div class="img_header" id="img-main">
+<img alt="Original Base !! READ RULES !!" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/5cf54f26622065a.png" border="0" title="Original Base !! READ RULES !!">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/tsiox" target="_blank">Tsiox</a>
+</div>
+</div>
+</div>
+<div class="col l4">
+<div class="mgbtm">
+<div class="render" id="art-image-1436018" data-id="1436018" data-last="1436018">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="1436018">
+<a href="/draw/sprite-d40e9fa781ec6bb" class="select-shop-a" data-art="d40e9fa781ec6bb">
+<div class="img_header" id="img-main">
+<img alt="Sprite" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/d40e9fa781ec6bb.png" border="0" title="Sprite">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/terphic" target="_blank">Terphic</a>
+</div>
+</div>
+<div class="mgbtm">
+<div class="render" id="art-image-1101045" data-id="1101045" data-last="1101045">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="1101045">
+<a href="/draw/profile-pic-base-ef36752b77e6196" class="select-shop-a" data-art="ef36752b77e6196">
+<div class="img_header" id="img-main">
+<img alt="Profile Pic base" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/ef36752b77e6196.png" border="0" title="Profile Pic base">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/velvetsoda" target="_blank">VelvetSoda</a>
+</div>
+</div>
+<div class="mgbtm">
+<div class="render" id="art-image-720242" data-id="720242" data-last="720242">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="720242">
+<a href="/draw/sombra-5f72007eec66aec" class="select-shop-a" data-art="5f72007eec66aec">
+<div class="img_header" id="img-main">
+<img alt="Sombra" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/5f72007eec66aec.png" border="0" title="Sombra">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/huck" target="_blank">Huck</a>
+</div>
+</div>
+<div class="mgbtm">
+<div class="render" id="art-image-647283" data-id="647283" data-last="647283">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="647283">
+<a href="/draw/finger-guns-6a3c528d620e14f" class="select-shop-a" data-art="6a3c528d620e14f">
+<div class="img_header" id="img-main">
+<img alt="*Finger Guns*" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/6a3c528d620e14f.png" border="0" title="*Finger Guns*">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/123fudgecakes" target="_blank">123fudgecakes</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-content new-from-collab">
+<div class="mgbottom">
+<strong>Collaboration Drawings</strong>
+<p>Select from most recent collaborations drawings.</p>
+</div>
+<div class="fixed-row row">
+<div class="col l4">
+<div class="mgbtm">
+<div class="render" id="art-image-2473116" data-id="2473116" data-last="2473116">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="2473116">
+<a href="/draw/me-728d1a19307b701" class="select-shop-a" data-art="728d1a19307b701">
+<div class="img_header" id="img-main">
+<img alt="me" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/728d1a19307b701.png" border="0" title="me">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/dearmasmartinez" target="_blank">dearmasmartinez</a>
+</div>
+</div>
+<div class="mgbtm">
+<div class="render" id="art-image-2473104" data-id="2473104" data-last="2473104">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="2473104">
+<a href="/draw/girl-754b3af9bc55133" class="select-shop-a" data-art="754b3af9bc55133">
+<div class="img_header" id="img-main">
+<img alt="girl" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/754b3af9bc55133.png" border="0" title="girl">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/unicornniya" target="_blank">unicornniya</a>
+</div>
+</div>
+<div class="mgbtm">
+<div class="render" id="art-image-2473066" data-id="2473066" data-last="2473066">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="2473066">
+<a href="/draw/guess-who-is-drawin-again-1dc7a0183acda10" class="select-shop-a" data-art="1dc7a0183acda10">
+<div class="img_header" id="img-main">
+<img alt="guess who is drawin again" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/1dc7a0183acda10.png" border="0" title="guess who is drawin again">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/tetsuya" target="_blank">Tetsuya</a>
+</div>
+</div>
+</div>
+<div class="col l4">
+<div class="mgbtm">
+<div class="render" id="art-image-2473171" data-id="2473171" data-last="2473171">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="2473171">
+<a href="/draw/draw-your-face-dce751ffeee99ba" class="select-shop-a" data-art="dce751ffeee99ba">
+<div class="img_header" id="img-main">
+<img alt="DRAW YOUR FACE!" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/dce751ffeee99ba.png" border="0" title="DRAW YOUR FACE!">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/artzz" target="_blank">artzz</a>
+</div>
+</div>
+<div class="mgbtm">
+<div class="render" id="art-image-2473113" data-id="2473113" data-last="2473113">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="2473113">
+<a href="/draw/thunbs-up-a6cb2b7437da2d6" class="select-shop-a" data-art="a6cb2b7437da2d6">
+<div class="img_header" id="img-main">
+<img alt="thunbs up" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/a6cb2b7437da2d6.png" border="0" title="thunbs up">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/idriiiiiz" target="_blank">IDRIIIIIZ</a>
+</div>
+</div>
+<div class="mgbtm">
+<div class="render" id="art-image-2473093" data-id="2473093" data-last="2473093">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="2473093">
+<a href="/draw/i-dont-know-these-people-p-d1a568f2a42956e" class="select-shop-a" data-art="d1a568f2a42956e">
+<div class="img_header" id="img-main">
+<img alt="I don&#039;t know these people :P" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/d1a568f2a42956e.png" border="0" title="I don&#039;t know these people :P">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/cooper8270" target="_blank">cooper8270</a>
+</div>
+</div>
+<div class="mgbtm">
+<div class="render" id="art-image-2473062" data-id="2473062" data-last="2473062">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="2473062">
+<a href="/draw/scar-2d73da5a0cb31c8" class="select-shop-a" data-art="2d73da5a0cb31c8">
+<div class="img_header" id="img-main">
+<img alt="Scar" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/2d73da5a0cb31c8.png" border="0" title="Scar">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/bnhawolfie" target="_blank">bnhaWolfie</a>
+</div>
+</div>
+</div>
+<div class="col l4">
+<div class="mgbtm">
+<div class="render" id="art-image-2473163" data-id="2473163" data-last="2473163">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="2473163">
+<a href="/draw/uh-oh-4cb2ff05023a0c0" class="select-shop-a" data-art="4cb2ff05023a0c0">
+<div class="img_header" id="img-main">
+<img alt="Uh oh!" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/4cb2ff05023a0c0.png" border="0" title="Uh oh!">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/charliepayne" target="_blank">Charliepayne</a>
+</div>
+</div>
+<div class="mgbtm">
+<div class="render" id="art-image-2473110" data-id="2473110" data-last="2473110">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="2473110">
+<a href="/draw/jason-54532af44f4ceef" class="select-shop-a" data-art="54532af44f4ceef">
+<div class="img_header" id="img-main">
+<img alt="jason" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/54532af44f4ceef.png" border="0" title="jason">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/k9kid51" target="_blank">k9kid51</a>
+</div>
+</div>
+<div class="mgbtm">
+<div class="render" id="art-image-2473070" data-id="2473070" data-last="2473070">
+<div class="down_play simple-gallery-image" data-ajax="1" data-last="2473070">
+<a href="/draw/collab-9992d99efd21dd5" class="select-shop-a" data-art="9992d99efd21dd5">
+<div class="img_header" id="img-main">
+<img alt="Collab" class="img_header_activity imghover" width="100%" src="https://www.pixilart.com/images/art/thumb/9992d99efd21dd5.png" border="0" title="Collab">
+</div>
+</a>
+</div>
+</div> <div class="art-text-helper">
+By <a href="https://www.pixilart.com/raisin27" target="_blank">Raisin27</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="hidden">
+<div class="select-information" class="hidden" data-header="Select">
+<div class="popup-hightlight normal-popupout info-about">
+<strong>Copy:</strong><br>
+Use <span class="code-key">CTRL+C</span> to copy selected content.
+</div>
+<div class="popup-hightlight normal-popupout info-about">
+<strong>Paste:</strong><br>
+Use <span class="code-key">CTRL+V</span> to paste copied content.
+</div>
+<div class="popup-hightlight normal-popupout info-about">
+<strong>Cut:</strong><br>
+Use <span class="code-key">CTRL+X</span> to copy and delete selected content.
+</div>
+</div>
+</div>
+<div class="hidden">
+<div class="download-information" id="download-information" class="hidden" data-header="Download">
+<div class="hidden-gif-download gif-helper clearfix">
+If you're having issues downloading a GIF, please allow pop-ups for pixilart.com.
+<img src="https://static.pixilart.com/images/public/popup-help.png" alt="pop-up helper">
+</div>
+<table class="download-table">
+<tbody>
+<tr class="hidden-gif-download">
+<td>
+<strong>GIF Download <span class="loading-percent-preview-gif loading-gif-restart"></span></strong>
+<p><span class="ration-show ration-gif"></span></p>
+</td>
+<td><select class="populate-numbers gif-download-size" data-alt="gif"></select></td>
+<td class="download-td"><a class="waves-effect waves-light btn download-btn download-preview z-depth-0 blue accent-3" data-select-size="true">Download</a></td>
+</tr>
+<tr>
+<td>
+<strong class="frames-text-change">Download</strong>
+<p><span class="ration-show ration-frame"></span></p>
+</td>
+<td><select class="populate-numbers frame-download-size" data-alt="frame"></select></td>
+<td class="download-td"><a class="waves-effect waves-light btn download-btn download-frame z-depth-0 blue accent-3">Download</a> <a class="waves-effect waves-light btn download-btn download-all-frames z-depth-0 blue accent-3 hidden-gif-download">All</a></td>
+</tr>
+<tr>
+<td>
+<strong>Layers</strong>
+<p><span class="ration-show ration-layer"></span></p>
+</td>
+<td><select class="populate-numbers layer-download-size" data-alt="layer"></select></td>
+<td class="download-td"><a class="waves-effect waves-light btn download-btn download-layer z-depth-0 blue accent-3">Current</a> <a class="waves-effect waves-light btn download-btn download-all-layers z-depth-0 blue accent-3 hide-mobile">All</a></td>
+</tr>
+<tr class="hide-mobile submit-drawing-hideable">
+<td>
+<strong>Save Drawing</strong>
+<p>Showcase this amazing drawing online</p>
+</td>
+<td></td>
+<td><a class="waves-effect waves-light btn z-depth-1 submit-drawing submit-drawing-bg" data-select-size="true">
+<i class="fa fa-star fa-fw fa-small" aria-hidden="true"></i> Upload
+</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="hidden">
+<div class="settings-information" class="hidden" data-header="Settings">
+<div class="row clearfix settings-details">
+<div class="sect fixed-row clearfix">
+<div class="col m6 s12">
+<div class="settings-head">Tracing</div>
+You can use a background image for tracking. Background images are not saved. Paste a valid URL to make this feature work.
+</div>
+<div class="col m6 s12">
+<div class="mgtop fixed-row">
+<div class="col m12 s9">
+<input type="text" value="" id="tracking-background-input" class="form-control-app background-image-input mgmgtp" placeholder="example.com/image.jpg" />
+</div>
+<div class="col m12 s2">
+<div class="switch">
+<label>
+<input type="checkbox" class="check-box filled-in form-control-app background-toggle" id="background-toggle" value="0" name="background">
+<span class="lever"></span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect fixed-row clearfix online-remove autosave-wrapper">
+<div class="col m10 s9">
+<div class="settings-head">Autosave</div>
+Autosave will automatically save your drawing, incase your devices randomly shuts off.
+</div>
+<div class="col m2 s2">
+<div class="switch">
+<label>
+<input type="checkbox" class="check-box filled-in form-control-app autosave-toggle" id="autosave-toggle" value="0" name="autosave" />
+<span class="lever"></span>
+</label>
+</div>
+</div>
+</div>
+<div class="sect fixed-row clearfix">
+<div class="col m10 s9">
+<div class="settings-head">Options Panel</div>
+Show extra tools panel that is draggable.
+</div>
+<div class="col m2 s2">
+<div class="switch">
+<label>
+<input type="checkbox" class="check-box filled-in form-control-app extras-toggle" id="extras-toggle" value="0" name="extras" />
+<span class="lever"></span>
+</label>
+</div>
+</div>
+</div>
+<div class="sect-header">
+Theme Options
+</div>
+<div class="sect fixed-row clearfix">
+<div class="col m10 s9">
+<div class="settings-head">Lighter Theme</div>
+Toggle to switch to a lighter theme.
+</div>
+<div class="col m2 s2">
+<div class="switch">
+<label>
+<input type="checkbox" class="check-box filled-in form-control-app lighter-toggle" id="lighter-toggle" value="0" name="lighter" />
+<span class="lever"></span>
+</label>
+</div>
+</div>
+</div>
+<div class="sect fixed-row clearfix">
+<div class="col m10 s9">
+<div class="settings-head">Icon Set</div>
+Switch between icon sets created by Pixilart users.
+</div>
+<div class="col m2 s2">
+<div class="switch">
+<label>
+<select class="select-icon-set right settings-switch" data-setting="iconSelection">
+</select>
+</label>
+</div>
+</div>
+</div>
+<div class="sect-header">
+Canvas Options
+</div>
+<div class="sect fixed-row clearfix">
+<div class="col m10 s9">
+<div class="settings-head">Show HUE Changer</div>
+Shows HUE changer. Hue changer allows you to change the hue of the current layer.
+</div>
+<div class="col m2 s2">
+<div class="switch">
+<label>
+<input type="checkbox" class="check-box filled-in form-control-app hue-toggle" id="hue-toggle" value="0" name="hue_color" />
+<span class="lever"></span>
+</label>
+</div>
+</div>
+</div>
+<div class="sect fixed-row clearfix online-remove">
+<div class="col m6 s12 online-remove">
+<div class="settings-head">Background Pattern</div>
+Generate patterns using text. Text codes are consistent. Overwrites current canvas.
+</div>
+<div class="col m6 s12">
+<a class="waves-effect waves-light btn z-depth-0 grey color-black pull-right lighten-2 text-pattern-prompt settings-butn" data-select-size="true">Pattern Generator</a>
+</div>
+</div>
+<div class="sect fixed-row clearfix">
+<div class="col m10 s9">
+<div class="settings-head">Grid</div>
+Toggle to show grid on top of drawing.
+</div>
+<div class="col m2 s2">
+<div class="switch">
+<label>
+<input type="checkbox" class="check-box filled-in form-control-app grid-toggle" id="grid-toggle" value="0" name="grid" />
+<span class="lever"></span>
+</label>
+</div>
+</div>
+</div>
+<div class="sect fixed-row clearfix">
+<div class="col m10 s9">
+<div class="settings-head">Checker</div>
+Toggle to show checker behind drawing (Ideal for tracing).
+</div>
+<div class="col m2 s2">
+<div class="switch">
+<label>
+<input type="checkbox" class="check-box filled-in form-control-app checker-toggle" id="checker-toggle" value="0" name="checker" />
+<span class="lever"></span>
+</label>
+</div>
+</div>
+</div>
+<div class="sect fixed-row clearfix">
+<div class="col m10 s9">
+<div class="settings-head">Onion Skin</div>
+Toggle to show onion skin of previous frame.
+</div>
+<div class="col m2 s2">
+<div class="switch">
+<label>
+<input type="checkbox" class="check-box filled-in form-control-app onion-toggle" id="onion-toggle" value="0" name="onion" />
+<span class="lever"></span>
+</label>
+</div>
+</div>
+</div>
+<div class="sect fixed-row clearfix hide-mobile frames-lock-wrapper">
+<div class="col m10 s9">
+<div class="settings-head">Lock Frames Panel</div>
+Toggle to always show the frames panel.
+</div>
+<div class="col m2 s2">
+<div class="switch">
+<label>
+ <input type="checkbox" class="check-box filled-in form-control-app frames-lock-toggle" id="frames-lock-toggle" value="0" />
+<span class="lever"></span>
+</label>
+</div>
+</div>
+</div>
+<div class="sect-header">
+Tool Options
+</div>
+<div class="sect fixed-row clearfix">
+<div class="col m10 s9">
+<div class="settings-head">Pixel Perfect</div>
+Toggle to setup pixel perfect pencil drawing. Doesn't work with mirror & Pixel size must be 1.
+</div>
+<div class="col m2 s2">
+<div class="switch">
+<label>
+<input type="checkbox" class="check-box filled-in form-control-app perfect-toggle" id="perfect-toggle" value="0" name="perfect" />
+<span class="lever"></span>
+</label>
+</div>
+</div>
+</div>
+<div class="sect fixed-row clearfix">
+<div class="col m10 s9">
+<div class="settings-head">Rainbow Colors</div>
+This will change the value of the current color as you draw with each stroke.
+</div>
+<div class="col m2 s2">
+<div class="switch">
+<label>
+<input type="checkbox" class="check-box filled-in form-control-app rainbow-toggle" id="rainbow-toggle" value="0" name="rainbow_color" />
+<span class="lever"></span>
+</label>
+</div>
+</div>
+</div>
+<div class="sect fixed-row clearfix">
+<div class="col m10 s9">
+<div class="settings-head">Random Colors</div>
+This will result in random colors from your current color pallet for each pixel.
+</div>
+<div class="col m2 s2">
+<div class="switch">
+<label>
+<input type="checkbox" class="check-box filled-in form-control-app random-color-toggle" id="random-color-toggle" value="0" name="random_color" />
+<span class="lever"></span>
+</label>
+</div>
+</div>
+</div>
+<div class="sect fixed-row clearfix">
+<div class="col m10 s9">
+<div class="settings-head">Dithering</div>
+This will enable dithering on all tools. Shortcut: Shift + X.
+</div>
+<div class="col m2 s2">
+<div class="switch">
+<label>
+<input type="checkbox" class="check-box filled-in form-control-app dithering-toggle" id="dithering-toggle" value="0" name="dithering" />
+<span class="lever"></span>
+</label>
+</div>
+</div>
+</div>
+<div class="sect fixed-row clearfix">
+<div class="col m10 s9">
+<div class="settings-head">Canvas Zoom</div>
+If your drawing seems sluggish/slow. You can enable this option which changes the zoom functionality to just the canvas. This will reload the page - Please save before doing so.
+</div>
+<div class="col m2 s2">
+<div class="switch">
+<label>
+<input type="checkbox" class="check-box filled-in form-control-app canvas-zoom-toggle" id="canvas-zoom-toggle" value="0" name="canvas_zoom" />
+<span class="lever"></span>
+</label>
+</div>
+</div>
+</div>
+<div class="sect-header">
+Misc Options
+</div>
+<div class="sect fixed-row clearfix">
+<div class="col m10 s9">
+<div class="settings-head">Disable Scroll Zoom</div>
+Some computers are over-accessible with trackpad scrolling. Here you can disable scroll zoom. You can still zoom in and out with the options panel.
+</div>
+<div class="col m2 s2">
+<div class="switch">
+<label>
+<input type="checkbox" class="check-box filled-in form-control-app disable-scroll-zoom-toggle" id="disable-scroll-zoom-toggle" value="0" name="disable-scroll-zoom" />
+<span class="lever"></span>
+</label>
+</div>
+</div>
+</div>
+<div class="sect fixed-row clearfix">
+<div class="col m10 s9">
+<div class="settings-head">Disable Save Download</div>
+Disable the drawing from being downloaded on your computer when submitting.
+</div>
+<div class="col m2 s2">
+<div class="switch">
+<label>
+<input type="checkbox" class="check-box filled-in form-control-app download-submit-toggle" id="download-submit-toggle" value="0" name="download-submit" />
+<span class="lever"></span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="hidden">
+<div class="mobile-new" class="hidden" data-header="New">
+<div class="presets-wrapper clearfix">
+<div class="preset-ct preset-select" data-width="16" data-height="16">16x16</div>
+<div class="preset-ct preset-select" data-width="32" data-height="32">32x32</div>
+<div class="preset-ct preset-select" data-width="50" data-height="50">50x50</div>
+<div class="preset-ct preset-select" data-width="100" data-height="100">100x100</div>
+<div class="preset-ct preset-select" data-width="200" data-height="200">200x200</div>
+</div>
+<div class="new-btn-ct">
+<a id="new-drawing-submit" class="new-drawing-submit new-drawing-a waves-effect waves-light btn z-depth-0 blue accent-3">New Drawing</a>
+</div>
+</div>
+</div>
+<div class="hidden">
+<div class="save-stamp" class="hidden" data-header="New Stamp">
+
+<div class="stamp-save-container">
+<div class="stamp-save-half stamp-preview-ct">
+<div class="stamp-preview-wrapper">
+
+<img src="" alt="stamp-data" class="stamp-data-preview" />
+</div>
+</div>
+<div class="stamp-save-half">
+<div class="stamp-save-header">
+<i class="fa fa-info-circle" aria-hidden="true"></i> Adding a public stamp needs approval. However, you can use your stamps whenever.
+</div>
+<form action="/draw" method="get" class="stamp-form-data" autocomplete="off">
+<input type="hidden" name="_token" value="1HeGPK2btJFB1U5ivnTATqJVUyDLthu0C7AREZqI" />
+<input type="hidden" class="hidden-base-image" name="stamp-data" />
+<label>
+Title<br>
+<input type="text" class="form-control-app title-stamp" name="stamp[title]" placeholder="Stamp Title" autocomplete="off" />
+</label>
+<label>
+Visability<br>
+<select class="visability-stamp" name="stamp[public_flag]">
+<option value="0">Public</option>
+<option value="1">Private</option>
+</select>
+</label>
+<div class="error-submitting new-stamp-error">
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <span class="error-message-stamp"></span>
+</div>
+<div class="submit-button-ct">
+<button type="submit" class="waves-effect waves-light btn z-depth-0 blue accent-3 submit-button stamp-submit-button">Save Stamp</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+<div class="hidden">
+<div class="custom-text-information" class="hidden" data-header="Custom Font">
+<div class="custom-text-form">
+<div class="mgbtm">
+<strong>Custom Fonts</strong><br>
+To use your custom font: Select the font 'Custom' under the dropdown menu within the options panel. You can create a letter by select the region with the select tool. 
+</div>
+<label>
+Line Height<br>
+<input type="number" class="form-control-app text-settings-height" min="1" max="100" name="line-height" placeholder="Word Spacing" autocomplete="off" />
+</label>
+<label>
+Letter Spacing<br>
+<input type="number" class="form-control-app text-settings-spacing" min="1" max="100" name="spacing" placeholder="Letter Spacing" autocomplete="off" />
+</label>
+<div class="mgbottom">
+<button type="button" class="waves-effect waves-light btn z-depth-0 blue accent-3 text-settings-update mgright">Update</button>
+</div>
+Available letters:
+<div class="row custom-font-wrapper">
+<div class="fixed-row text-settings-display">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="hidden">
+<div class="brush-presets-wrapper" class="hidden" data-header="Brushes">
+<div class="custom-text-form">
+<div class="mgbtm">
+<strong>Brushes</strong><br>
+To assign a create brush - simply use the select tool and select the desired area. Use hashtag #brushes to get your brush added.
+</div>
+Available brushes:
+<div class="row custom-font-wrapper">
+<div class="fixed-row brush-settings-display">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="hidden">
+<div class="select-text-information" class="hidden" data-header="Pick letter or number">
+<div class="custom-text-form">
+Please select which letter to assign:<br>
+(You can use this font by selecting 'Custom' uner the font select dropdown)
+<div class="row custom-font-wrapper">
+<div class="fixed-row text-settings-display">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="hidden">
+<div id="submit-small" data-header="Download Image">
+<div class="too-small-image-wrapper">
+<i class="fa fa-info-circle" aria-hidden="true"></i> The image size is too small to be uploaded online. Images must be greater than 31x31 pixels. You can download the images below at any ratio.
+</div>
+<table class="download-table">
+<tbody>
+<tr>
+<td>
+<strong>Layers</strong>
+<p><span class="ration-show ration-layer"></span></p>
+</td>
+<td><select class="populate-numbers layer-download-size" data-alt="layer"></select></td>
+<td class="download-td"><a class="waves-effect waves-light btn download-btn download-layer z-depth-0 blue accent-3">Current</a> <a class="waves-effect waves-light btn download-btn download-all-layers z-depth-0 blue accent-3">All</a></td>
+</tr>
+<tr>
+<td>
+<strong>Frames</strong>
+<p><span class="ration-show ration-frame"></span></p>
+</td>
+<td><select class="populate-numbers frame-download-size" data-alt="frame"></select></td>
+<td class="download-td"><a class="waves-effect waves-light btn download-btn download-frame z-depth-0 blue accent-3">Current</a> <a class="waves-effect waves-light btn download-btn download-all-frames z-depth-0 blue accent-3">All</a></td>
+</tr>
+<tr>
+<td>
+<strong>GIF <span class="loading-percent-preview-gif loading-gif-restart"></span></strong>
+<p><span class="ration-show ration-gif"></span></p>
+</td>
+<td><select class="populate-numbers gif-download-size" data-alt="gif"></select></td>
+<td class="download-td"><a class="waves-effect waves-light btn download-btn download-preview z-depth-0 blue accent-3" data-select-size="true">Download</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="hidden">
+<div id="colors-popup" data-header="Colors">
+<div class="color-container mobile-color-container">
+</div>
+</div>
+</div>
+<div class="hidden">
+<div id="submit-drawing" data-header="Submit Drawing">
+
+<form class="submit-drawing-wrapper submit-drawing-form clearfix" action="/draw" method="get" id="submit-form" autocomplete="off">
+<input type="hidden" name="_token" value="1HeGPK2btJFB1U5ivnTATqJVUyDLthu0C7AREZqI" />
+<input type="hidden" class="frame-0" name="inital_frame" value="" />
+<input type="hidden" class="tree-data" name="tree_frame" value="" />
+<div class="mgbtm">
+<strong><i class="fa fa-smile-o"></i> Such wow! Amazing!</strong> Saving a drawing online allows you to share it with others or save it as private in your personal gallery (if signed in).
+</div>
+<div class="submit-third">
+<div class="form-submit-ct">
+<label>
+Title<br>
+<input type="text" autocomplete="off" class="form-control-app title-drawing drawing-title-submit" name="title" placeholder="Title" required="required" />
+</label>
+<label>
+Description<br>
+<textarea class="form-control-app desc-art title-stamp" name="description" rows="4" maxlength="2000" placeholder="Description"></textarea>
+</label>
+<div class="error-submitting">
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <span class="error-message-submit"></span>
+</div>
+<div class="submit-button-ct-s">
+<div class="drawing-submit-btn-group">
+<button type="submit" class="submit-new-drawing submit-drawing-butn waves-effect waves-light btn z-depth-0 blue accent-3 submit-button"><i class="fa fa-star fa-small fa-fw" aria-hidden="true"></i> Save Drawing</button>
+</div>
+</div>
+<div class="save-as submit-save-as hide-mobile">
+<div class="popup-hightlight normal-popupout">
+<i class="fa fa-floppy-o" aria-hidden="true"></i> Please save as a <strong>.pixil</strong> if you plan on editing this later.
+</div>
+</div>
+</div>
+</div>
+<div class="submit-third">
+<div class="form-submit-ct  disabled-field-group ">
+<div class="disabled-lock-icon" title="Login is required to use these features.">
+<div>
+<i class="fa fa-lock fa-fw" aria-hidden="true"></i><br>
+<span class="text-helper-disabled">Login required to use these features.</span>
+</div>
+</div>
+<div class="form-pre-fields">
+<label>
+Who can edit this drawing?<br>
+<select name="can_edit" disabled="disabled">
+<option>Public Edit</option>
+<option value="0">Only me</option>
+<option value="1">Anyone Can Edit</option>
+</select>
+</label>
+<label>
+Visability<br>
+<select name="is_private" disabled="disabled">
+<option value="0">Public Image</option>
+<option value="1">Private Image</option>
+</select>
+</label>
+<div class="checkbox-form-wrap">
+<input type="checkbox" class="hidden" value="0" checked="checked" name="is_collab" />
+<input type="checkbox" class="check-box filled-in form-control-app" id="collab-check" value="1" name="is_collab" disabled="disabled" />
+<label for="collab-check">Collab drawing <i class="fa fa-info-circle ttip fa-fw" aria-hidden="true" title="Users can edit image with other users in a collab like feature"></i></label>
+</div>
+</div>
+</div>
+<div class="form-submit-ct">
+<div class="form-pre-fields">
+<div class="checkbox-form-wrap upload-replay-toggle hide-mobile hide-ip-d">
+<input type="checkbox" class="hidden" value="0" checked="checked" name="upload_progress" />
+<input type="checkbox" class="check-box filled-in form-control-app progress-check-toggle" id="progress-check" value="1" name="upload_progress" />
+<label for="progress-check">Upload replay <span class="new-text">New!</span> <i class="fa fa-info-circle ttip fa-fw" aria-hidden="true" title="Could slow down upload process"></i></label>
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+
+<div id="submit-loading" class="hidden" data-header="Loading Image">
+<div class="header-loading-drawing">
+<a href="#" class="waves-effect waves-light btn z-depth-0 blue accent-3 full-btn go-to-image-btn">Go to image</a>
+<div class="pre-getting-text">
+Getting Image.. <i class="fa fa-spinner fa-pulse fa-fw"></i>
+</div>
+</div>
+<div class="ad-video-wrapper">
+<span class="ad-text">Advertisement</span>
+<div class="ad-video-placement">
+
+</div>
+</div>
+</div>
+
+<div id="bad-browser" class="hidden" data-header="Alert">
+<p>
+The browser you are using may experience issues with this application. You may use the old version here: <a href="https://www.pixilart.com/old" title="Old Version">https://www.pixilart.com/old</a>
+</p>
+<div class="close-popup-button close-btn waves-effect waves-light btn z-depth-0 blue accent-3">Continue</div>
+</div>
+
+<div id="auto-save-loaded" class="hidden" data-header="Autosave Loaded">
+<p>
+Looks like you didn't save your latest changes and autosave has loaded them for you. Click 'New Drawing' if you would like to start a new drawing.<br><br>
+<strong>You can disable autosave in settings (<i class="fa fa-cogs" aria-hidden="true"></i>).</strong>
+</p>
+<div class="close-popup-button close-btn waves-effect waves-light btn z-depth-0 blue accent-3">Continue</div>
+<div class="close-popup-button new-pix-link waves-effect waves-light btn z-depth-0 grey accent-3">New Drawing</div>
+</div>
+
+<div class="hidden" id="about-information" data-header="Information">
+<div>
+<a href="/" id="logo-home" target="_blank">
+<img class="large valign" src="https://static.pixilart.com/images/public/logo_pixilart_simple_black.png" id="header-logo" alt="Pixilart Logo">
+</a>
+<div class="pull-right text-right version-text">version: 1.8.1</div>
+</div>
+<div class="row fixed-row about-section-drawing">
+<div class="col m12 s12">
+<h1>Drawing pixel art is easier than ever when using Pixilart</h1>
+<h2>Easily create sprites and other retro style images with this drawing application</h2>
+<div class="mgtop">Pixilart is an online pixel drawing application and social platform for creative minds who want to venture into the world of art, games, and programming. Pixel art is fundamental for understanding how digital art, games, and programming work.</div>
+</div>
+</div>
+<div class="row fixed-row mgtop clearfix">
+<div class="col m6 s12">
+<a href="/help/contact" target="_blank" class="waves-effect waves-light btn z-depth-0 blue accent-3 hide-mobile">Contact Us <span class="fa fa-external-link"></span></a>
+</div>
+<div class="col m6 s12 text-right">
+<div class="share-wrapper">
+<div class="share-items">
+<a href="http://www.facebook.com/sharer/sharer.php?u=https://www.pixilart.com/draw&title=Pixel Drawing Application - Pixilart" target="_blank" class="share-button-image facebook"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a>
+<a data-via="pixil_art" data-text="Pixel Drawing Application - Pixilart" data-hashtags="pixilart,pixelart" data-url="https://www.pixilart.com/draw" href="https://twitter.com/intent/tweet?text=Pixilart - Pixel Drawing Application - https://www.pixilart.com/draw&hashtags=pixilart,pixelart" target="_blank" class="share-button-image twitter"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
+<a href="https://plus.google.com/share?url=https://www.pixilart.com/draw" target="_blank" class="share-button-image google"><i class="fa fa-google-plus fa-fw" aria-hidden="true"></i></a>
+<a href="http://www.tumblr.com/share?v=3&u=https://www.pixilart.com/draw&t=Pixel Drawing Application - Pixilart" target="_blank" class="share-button-image tumblr"><i class="fa fa-tumblr fa-fw" aria-hidden="true"></i></a>
+<a href="//www.reddit.com/submit?url=https://www.pixilart.com/draw" class="share-button-image reddit"><i class="fa fa-reddit-alien fa-fw" aria-hidden="true"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="hidden" id="info-container" data-header="Information">
+<div class="section-info">
+<div class="section-info-header">
+<strong>Keyboard Shortcuts</strong>
+</div>
+<div class="row fixed-row">
+<div class="col m6">
+<div class="shortcut-icon">Space</div> preview current image<br>
+<div class="shortcut-icon">Ctrl + Shift + S</div> save drawing<br>
+<div class="shortcut-icon">Shift + A</div> add frame<br>
+<div class="shortcut-icon">Shift + D</div> duplicate frame<br>
+<div class="shortcut-icon">P</div> pencil tool<br>
+<div class="shortcut-icon">E</div> eraser tool<br>
+<div class="shortcut-icon">L</div> line tool<br>
+<div class="shortcut-icon">Q</div> square tool<br>
+<div class="shortcut-icon">C</div> circle tool<br>
+</div>
+<div class="col m6">
+<div class="shortcut-icon">X</div> switch primary color<br>
+<div class="shortcut-icon">N</div> bucket color tool<br>
+<div class="shortcut-icon">V</div> color picker tool<br>
+<div class="shortcut-icon">M</div> move tool<br>
+<div class="shortcut-icon">S</div> select tool<br>
+ <div class="shortcut-icon">T</div> text tool<br>
+<div class="shortcut-icon">D</div> lighten & darken tool<br>
+<div class="shortcut-icon">B</div> bucket tool<br>
+<div class="shortcut-icon">K</div> dither tool<br>
+</div>
+</div>
+</div>
+<div class="section-info">
+<div class="section-info-header">
+<strong>Drawing Tips</strong>
+</div>
+• You can create stamps and use them for later. Create a stamp by selecting a region on the canvas and clicking 'Save Stamp' on the top right corner.<br>
+• Add more colors by clicking the black and white squres under the 'Tools' panel.
+</div>
+<div class="section-info">
+<div class="section-info-header">
+<strong>Making a GIF</strong><br>
+Making animations are fun, but can be difficult. Here are some quick tips to get you started.
+</div>
+• You have an unlimited amount of frames - submitting a large gif does take a bit longer to load.<br>
+• Edit frames by selecting the preview image.<br>
+• Move frames be using the left and right arrow icons (<i class="fa fa-arrow-left" aria-hidden="true"></i><i class="fa fa-arrow-right" aria-hidden="true"></i>).<br>
+• Delete frames by selecting the trash can icon (<i class="fa fa-trash" aria-hidden="true"></i>).<br>
+• You can change each frames time by selecting the ms. 1000ms = 1 second.<br>
+• Demostration of making an animation: <a href="https://www.youtube.com/watch?v=xsXYPoX7a1o" target="_blank">https://www.youtube.com/watch?v=xsXYPoX7a1o</a>
+</div>
+<div class="section-info">
+<div class="section-info-header">
+<strong>Information</strong>
+</div>
+• If after drawing for awhile and the drawing application seems 'slow'. Please save your progress and reload the page.<br>
+• If the canvas seems laggy or glitchy, try using a smaller canvas size. It may also be due to screen resolution.<br>
+• Autosave saves every 1 minute.
+</div>
+</div>
+<div class="alert-response-container">
+<div class="alert-response-wrapper">
+<div class="alert-response">
+</div>
+<div class="alert-close">
+<i class="fa fa-times fa-fw"></i>
+</div>
+</div>
+</div>
+<div class="hidden">
+<a href="#" id="dowmnload-a" target="_blank"></a>
+<input type="hidden" id="_token" value="1HeGPK2btJFB1U5ivnTATqJVUyDLthu0C7AREZqI" />
+<img src="" class="hidden" id="image-preset" alt="image preset" crossorigin="Anonymous" />
+<input type="file" id="file-open" value="" accept=".pixil" />
+<input type="file" id="open-image" name="open-file" accept="image/*" />
+<img src="/images/public/application/made-with.png" id="made-with" />
+</div>
+<div class="hidden">
+
+<span id="width-image">100</span>
+<span id="height-image">100</span>
+<div class="options-appened">
+</div>
+</div>
+<div id="color-import" class="hidden"></div>
+<div class="popup-container login-popup" style="display:none">
+<div class="close-login-popup">
+</div>
+<div class="login-popup-container popup-wrapper">
+<div class="login-header">
+<div class="login-header-text" data-tap="loginTab">
+Login
+</div>
+<div class="login-header-text signup-select-head active" data-tap="signupTab">
+Create Account
+</div>
+</div>
+<div class="login-group">
+<div class="login-section">
+<div id="loginTab" class="tab-login soft-hidden">
+<div class="login-switch login-section active">
+<form action="/login/process-login" method="post" class="login-forms login-form-popup  login-submit " data-file="/login/process-login">
+<input type="hidden" name="_token" value="1HeGPK2btJFB1U5ivnTATqJVUyDLthu0C7AREZqI">
+<input type="hidden" name="ajax-request" value="true">
+<div class="login-popup-text-sup">
+<div class="login-panel-head">Welcome back!</div>
+<div class="error-login"></div>
+</div>
+<div class="input-field">
+<input type="text" class="login-itext normal-input" name="email" placeholder="E-mail or Username" autocomplete="off" required="required">
+</div>
+<div class="input-field input-field-ch">
+<input type="password" class="login-itext normal-input" name="password" placeholder="Password" required="required">
+</div>
+<button type="submit" name="submit" value="Login" class="full-width-button submit-btn-login waves-effect waves-light btn blue accent-3 z-depth-0">
+Login
+</button>
+<div class="full-width-button forgot-pw-lg switch-login-tab" data-toggle=".forgotpass-section">Forgot Password?</div>
+</form>
+</div>
+<div class="login-switch forgotpass-section">
+<form action="/forgot-password/process-forgot-password" method="post" class="login-forms login-form-popup  login-submit " data-file="/forgot-password/process-forgot-password">
+<input type="hidden" name="_token" value="1HeGPK2btJFB1U5ivnTATqJVUyDLthu0C7AREZqI">
+<input type="hidden" name="api" value="true">
+<input type="hidden" name="ajax-request" value="true">
+<div class="login-popup-text-sup">
+<div class="back-to-login switch-login-tab" data-toggle=".login-section"><i class="fa fa-arrow-left"></i> Login</div>
+<div class="login-panel-head">Forgot Password</div>
+If you have forgotten your password, please enter your e-mail below and click 'Send E-mail' button. You'll receive an e-mail that contains a link to set a new password.<br>
+<div class="change-right-login">
+<div class="success-login"></div>
+<div class="error-login"></div>
+</div>
+</div>
+<div class="input-field">
+<input type="email" class="login-itext normal-input emailfield" name="forgot[email]" placeholder="E-mail" autocomplete="off" required="required">
+</div>
+<button type="submit" name="submit" value="Send E-mail" class="full-width-button submitEmail submit-btn-login waves-effect waves-light btn blue accent-3 z-depth-0">
+Send E-mail
+</button>
+</form>
+</div>
+</div>
+<div id="signupTab" class="tab-login">
+<form action="/signup/process-signup" method="post" class="login-forms login-form-popup  login-submit " data-file="/signup/process-signup">
+<input type="hidden" name="_token" value="1HeGPK2btJFB1U5ivnTATqJVUyDLthu0C7AREZqI">
+<input type="hidden" name="ajax-request" value="true">
+<div class="login-popup-text-sup">
+<div class="login-panel-head">Create Account</div>
+Please verify your e-mail address before creating an account. By signing up you agree to our <a href="/terms" target="_blank">terms of use</a>.<br>
+<div class="change-right-login">
+<div class="success-login"></div>
+<div class="error-login"></div>
+</div>
+</div>
+<div class="hide-form">
+<div class="input-field">
+<input type="email" class="login-itext normal-input emailfield" name="email" placeholder="E-mail" autocomplete="off" required="required">
+</div>
+<button type="submit" name="submit" value="Sign up" class="full-width-button waves-effect waves-light btn z-depth-0 blue accent-3 submitEmail">
+Sign Up
+</button>
+</div>
+</form>
+</div>
+</div>
+<div class="login-section social-selectors">
+<div class="login-popup-social">
+<div class="login-wrapper-so">
+<div class="login-so-text">
+By connecting you agree to our <a href="/terms" target="_blank">terms of use</a>.
+</div>
+<div class="fixed-row row button-group-so">
+<div class="col l9 offset-l1">
+<a class="social-button facebook waves-effect" href="/login/facebook">
+<i class="fa fa-facebook"></i>
+<span class="text-social">Connect with Facebook</span>
+</a>
+<a class="social-button twitter waves-effect" href="/login/twitter">
+<i class="fa fa-twitter"></i>
+<span class="text-social">Connect with Twitter</span>
+</a>
+<a class="social-button google waves-effect" href="/login/google">
+<i class="fa fa-google"></i>
+<span class="text-social">Connect with Google</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"6eae353a0d","applicationID":"29871410","transactionName":"ZlxSZkJWWhdZAEJZWV8WcVFEXlsKFyJGQGp5TURCbHRbCkwRWVxaVEtDbnRFVRNRDVFzWV9NQl1cW1EWeARTRH9fXVVK","queueTime":0,"applicationTime":198,"atts":"ShtREApMSRk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+<script type='text/javascript' src="https://static.pixilart.com/dist/libgif.js"></script>
+<script type='text/javascript' src="https://static.pixilart.com/dist/gif.js?v=1.2"></script>
+
+<script type='text/javascript' src="https://static.pixilart.com/js/pixilart_app.js?v=1.2.1.2.4"></script>
+<script type='text/javascript' src="https://static.pixilart.com/js/common.js?ver=3.2.9"></script>
+</html>
